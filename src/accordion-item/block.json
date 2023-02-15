@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "ingeni-bootstrap-accordion/accordion-item",
+    "version": "0.1.0",
+    "title": "Ingeni Bootstrap Accordion item",
+    "category": "text",
+    "icon": "flag",
+    "description": "Accordion item for the Ingeni Bootstrap Accordion Gutenberg block",
+    "attributes": {
+        "title": {
+            "type": "string",
+            "source": "text",
+            "selector": "div.accordion-button"
+        },
+        "content": {
+            "type": "string",
+            "source": "text",
+            "selector": "div.accordion-body"
+        },
+        "blockID": { 
+			"type": "string",
+			"default": ""
+		}
+    },
+    "supports": {
+        "html": true
+    },
+    "textdomain": "ingeni-bootstrap-accordion-item",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css"
+}
+
