@@ -11,7 +11,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText, InspectorControls  } from '@wordpress/block-editor';
+import {  InnerBlocks, useBlockProps, RichText, InspectorControls  } from '@wordpress/block-editor';
 import {
 	PanelBody,
 	PanelRow,
@@ -41,10 +41,7 @@ export default function Edit( { attributes, setAttributes } ) {
         setAttributes( { title: value } );
     };
 
-    const onChangeContent = ( value ) => {
-        setAttributes( { content: value } );
-    };
-
+    //console.log('edit about to return');
     return (
         <div>
             <InspectorControls>
@@ -65,7 +62,9 @@ export default function Edit( { attributes, setAttributes } ) {
                 </h2>
 
                 <div id={ attributes.blockID } class="accordion-collapse collapse" aria-labelledby={ attributes.blockID + '_head'}>
-                    <RichText class="accordion-body" tagName="div" value={ attributes.content } onChange={ onChangeContent } />
+                    <div class="accordion-body" >
+                        <InnerBlocks />
+                    </div>
                 </div>
             </div>
         </div>

@@ -25,7 +25,7 @@ import metadata from './block.json';
 
 const ALLOWED_BLOCKS = ['ingeni-bootstrap-accordion/accordion-item'];
 const TEMPLATE = [
-    [ 'ingeni-bootstrap-accordion/accordion-item', { title: 'Item title', content: 'Item content' } ],
+    [ 'ingeni-bootstrap-accordion/accordion-item', { title: 'Item title' } ],
 ];
 
 registerBlockType( metadata.name, {

@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { useBlockProps, RichText, InnerBlocks } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -27,7 +27,6 @@ export default function save( { attributes } ) {
         attributes.blockID = 'item_' + String(Math.floor(Math.random() * (9999-1000)) + 1000) ;
         //console.log('acc-item set default:'+JSON.stringify(attributes));
     }
-
     return (
         <div class="accordion-item">
             <h2 class="accordion-header" id={ attributes.blockID + '_head'}>
@@ -35,8 +34,10 @@ export default function save( { attributes } ) {
             </h2>
 
             <div id={ attributes.blockID } class="accordion-collapse collapse" aria-labelledby={ attributes.blockID + '_head'}>
-                <RichText.Content class="accordion-body" tagName="div" value={ attributes.content } />
+                <div class="accordion-body">
+                    <InnerBlocks.Content />
+                </div>
             </div>
-      </div>
+        </div>
     );
 }
