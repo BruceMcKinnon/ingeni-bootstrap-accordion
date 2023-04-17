@@ -1,6 +1,6 @@
 {
   "name": "ingeni-bootstrap-accordion",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A Gutenberg block for creating Bootstrap 5 accordions.",
   "author": "Bruce McKinnon, with thanks to Victor Shershnyov",
   "license": "GPL-2.0-or-later",

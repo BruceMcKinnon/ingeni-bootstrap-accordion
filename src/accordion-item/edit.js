@@ -16,6 +16,7 @@ import {
 	PanelBody,
 	PanelRow,
 	TextControl,
+    ToggleControl,
 } from "@wordpress/components";
 
 
@@ -53,12 +54,20 @@ export default function Edit( { attributes, setAttributes } ) {
                     value={ attributes.blockID }
                 />
                 </PanelRow>
+                <PanelRow>
+                <ToggleControl
+                    label="Show on Load?"
+                    checked={ attributes.autoOpen }
+                    onChange={() => setAttributes({ autoOpen: !attributes.autoOpen })}
+                />
+
+                </PanelRow>
             </PanelBody>
             </InspectorControls>
 
             <div { ...blockProps } >
                 <h2 class="accordion-header" id={ attributes.blockID + '_head'}>
-                    <RichText class="accordion-button collapsed" tagName="div" value={ attributes.title } onChange={ onChangeTitle } data-bs-toggle="collapse" data-bs-target={ '#' + attributes.blockID } aria-expanded="false" aria-controls={ attributes.blockID } />
+                    <RichText class="accordion-button collapsed" tagName="div" value={ attributes.title } onChange={ onChangeTitle } data-bs-toggle="collapse" data-bs-target={ '#' + attributes.blockID } aria-expanded={ attributes.autoOpen } aria-controls={ attributes.blockID } />
                 </h2>
 
                 <div id={ attributes.blockID } class="accordion-collapse collapse" aria-labelledby={ attributes.blockID + '_head'}>

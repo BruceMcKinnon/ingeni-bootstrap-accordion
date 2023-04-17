@@ -27,13 +27,20 @@ export default function save( { attributes } ) {
         attributes.blockID = 'item_' + String(Math.floor(Math.random() * (9999-1000)) + 1000) ;
         //console.log('acc-item set default:'+JSON.stringify(attributes));
     }
+    var panelClass = 'collapse';
+    var buttonClass = 'collapsed';
+    if ( attributes.autoOpen  ) {
+        panelClass = 'collapse show';
+        buttonClass = '';
+    }
+
     return (
         <div class="accordion-item">
             <h2 class="accordion-header" id={ attributes.blockID + '_head'}>
-                <RichText.Content class="accordion-button collapsed" tagName="div" value={attributes.title} data-bs-toggle="collapse" data-bs-target={ '#' + attributes.blockID } aria-expanded="false" aria-controls={ attributes.blockID }/>
+                <RichText.Content class={ 'accordion-button ' + buttonClass } tagName="div" value={attributes.title} data-bs-toggle="collapse" data-bs-target={ '#' + attributes.blockID } aria-expanded={ attributes.autoOpen } aria-controls={ attributes.blockID }/>
             </h2>
 
-            <div id={ attributes.blockID } class="accordion-collapse collapse" aria-labelledby={ attributes.blockID + '_head'}>
+            <div id={ attributes.blockID } class={ 'accordion-collapse ' + panelClass } aria-labelledby={ attributes.blockID + '_head'}>
                 <div class="accordion-body">
                     <InnerBlocks.Content />
                 </div>
