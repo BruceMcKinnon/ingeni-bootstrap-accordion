@@ -2,3 +2,6 @@
     background-color: #ffffff;
     border: 1px solid #eceeef;
 }
+.wp-block-ingeni-bootstrap-accordion-accordion .collapse:not(.show) {
+	display: block !important;
+}

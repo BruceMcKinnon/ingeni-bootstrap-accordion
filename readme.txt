@@ -2,7 +2,7 @@
 Contributors:      Bruce McKinnon, with thanks to Victor Shershnyov
 Tags:              block
 Tested up to:      6.1
-Stable tag:        1.2.0
+Stable tag:        1.2.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,3 +34,5 @@ A Gutenberg block for creating Bootstrap 5 accordions. Make sure your theme incl
 
 = 1.2.0 = Now allows accordion panels to be open by default
         = Added plugin update checker support.
+
+= 1.2.1 = Extra editor CSS to ensure the accordion item is visible in the block editor.

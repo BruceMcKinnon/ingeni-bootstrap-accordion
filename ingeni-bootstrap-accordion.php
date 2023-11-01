@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Ingeni Bootstrap Accordion
  * Description:       A Gutenberg block for creating Bootstrap 5 accordions.
- * Version:           1.2.0
+ * Version:           1.2.1
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Author:            Bruce McKinnon, with thanks to Victor Shershnyov
